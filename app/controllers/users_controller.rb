@@ -1,7 +1,16 @@
 class UsersController < ApplicationController
+ 
+  def index
+    @book = Book.new
+    @users = User.all
+    @user = current_user
+  end
+ 
   def show
-    @user = User.find(params[:id]) 
-    @books = @user.post_images  
+    @users = User.find(params[:id]) 
+    @user = current_user
+    @book = Book.find(params[:id])
+    @books = Book.all
   end
 
   def edit
