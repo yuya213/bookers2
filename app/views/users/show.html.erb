@@ -5,12 +5,15 @@
 </head>
 
 <boby>
+  <% flash[:notice] %>
+  
   <div class="container">
   <div class="row">
+    
 
 <%= render 'books/list', user: @user %>
 
-<%= render 'books/index', user: @user %>
+<%= render 'books/index', user: @user,books: @books %>
     
     
 </div> 

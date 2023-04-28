@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="fontawesome-i2svg-active fontawesome-i2svg-complete">
   <head>
     <title>Bookers2</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -27,25 +27,25 @@
     <% if user_signed_in? %>
     <il class="nav-item">
        <%= link_to user_path(current_user.id), class:'nav-link text-light' do %>
-       <l class=""></l>Home
+       <i class="fas fa-home"></i> Home
        <% end %>
     </il>
     
     <il class="nav-item">
       <%= link_to users_path, class:'nav-link text-light' do %>
-    <l class=""></l>Users
+    <i class="fas fa-users"></i> Users
        <% end %>
     </il>
     
     <il class="nav-item">
       <%= link_to books_path, class:'nav-link text-light' do %>
-    <l class=""></l>Books
+    <i class="fas fa-book-open"></i> Books
        <% end %>
     </il>
    
     <il class="nav-item">
         <%= link_to destroy_user_session_path, method: :delete, class:'nav-link text-light' do %>
-    <l class=""></l>Log out
+    <i class="fas fa-sign-out-alt"></i> Log out
        <% end %>
     </il>
       
@@ -53,25 +53,25 @@
      
      <il class="nav-item">
        <%= link_to root_path, class:'nav-link text-light' do %>
-       <l class=""></l>Home
+       <i class="fas fa-home"></i> Home
        <% end %>
       </il>
        
        <il class="nav-item">
        <%= link_to about_path, class:'nav-link text-light' do %>
-       <l class=""></l>About
+       <i class="fas fa-link"></i> About
        <% end %>
        </il>
     
       <il class="nav-item">
         <%= link_to new_user_registration_path, class:'nav-link text-light' do %>
-        <l class=""></l>Sign up
+        <i class="fas fa-user-plus"></i> Sign up
         <% end %>
       </il>
      
       <il class="nav-item">
         <%= link_to new_user_session_path, class:'nav-link text-light' do %>
-         <l class=""></l>Log in
+         <i class="fad fa-sign-in-alt"></i> Log in
          <% end %>
       </il>
       
@@ -82,10 +82,14 @@
     </div>
   </nav>
  </header>
-
+ 
+ <main>
+  <%= flash[:notice] %>
+    
     <%= yield %>
     
      
+  </main>  
     
     <footer>
   <div class="container mt-5">
