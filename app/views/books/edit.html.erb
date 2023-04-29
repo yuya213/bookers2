@@ -1,13 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-   <title>Bookers2</title>
-</head>
-
-<boby>
+   <% if @book.errors.any? %>
+  <%= @book.errors.count %>件のerrorが発生しました
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+    
   <div class="container">
   <div class="row">
   <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+    
+     
+    
+  
 
 <h1>Editing Book</h1>
 
@@ -33,5 +39,3 @@
  </div> 
   </div> 
   </div> 
-</boby>
-</html>

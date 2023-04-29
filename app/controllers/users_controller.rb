@@ -8,8 +8,9 @@ class UsersController < ApplicationController
   end
  
   def show
-    @user = current_user
-    @books = Book.all
+    @user = User.find(params[:id])
+    @books = @user.books
+    @book = Book.new
   end
 
   def edit
@@ -23,7 +24,7 @@ class UsersController < ApplicationController
        redirect_to user_path(@user) 
     else
     	 @books = Book.all
-     	 render :show
+     	 render :edit
     end
   end
   
@@ -35,7 +36,7 @@ class UsersController < ApplicationController
   
   def correct_user
     @user = User.find(params[:id])
-    redirect_to(books_path) unless @user == current_user
+    redirect_to user_path(current_user.id) unless @user == current_user
   end
 
 
